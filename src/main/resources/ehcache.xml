@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false" name="defaultCache">
+
+	<diskStore path="../temp/jeesite/ehcache" />
+
+	<!-- 默认缓存配置. 自动失效：最后一次访问时间间隔300秒失效，若没有访问过自创建时间600秒失效。-->
+	<defaultCache maxEntriesLocalHeap="1000" eternal="false" timeToIdleSeconds="1300" timeToLiveSeconds="1600"
+		overflowToDisk="true" statistics="true"/>
+	<cache name="getsjcategorys" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="categorys" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="mx" maxEntriesLocalHeap="300" timeToIdleSeconds="300" timeToLiveSeconds="600" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="brands" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="goods" maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="imgs" maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="userCache" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+
+	<cache name="fkqgs" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="rxphs" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="scrxs" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="scjps" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="xps" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+</ehcache>

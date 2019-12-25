@@ -10,6 +10,7 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
+import com.jfinal.ext.interceptor.SessionInViewInterceptor;
 import com.jfinal.kit.PathKit;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
@@ -83,6 +84,7 @@ public class DemoConfig extends JFinalConfig {
         me.addSharedFunction("/common/_atop.html");
 		me.addSharedFunction("/common/_dtop.html");
 		me.addSharedFunction("/common/_layout.html");
+		me.addSharedMethod(new com.jfinal.kit.StrKit());
 	}
 	
 	/**
@@ -118,6 +120,7 @@ public class DemoConfig extends JFinalConfig {
 	 */
 	public void configInterceptor(Interceptors me) {
 		//me.add(new BlogInterceptor());
+		me.add(new SessionInViewInterceptor());
 	}
 	
 	/**

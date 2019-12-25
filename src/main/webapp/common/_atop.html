@@ -45,7 +45,40 @@
         <div class="home-category fl"  onmouseover="_show_(this)" onmouseout="_hide_(this)">
             <a href="catalog" class="menu-event main-bg-color" title="查看全部商品分类">全部商品分类<i></i></a>
             <div class="expand-menu all-cat main-bg-color">
+                #for(x : categorys)
+                #if(x.parent_id == '0')
                 <div class="list">
+                    <dl class="cat">
+                        <dt class="cat-name"><a href="category?id=#(x.id)" target="_blank" title="#(x.name)">#(x.name)</a></dt>
+                        <i>&gt;</i>
+                    </dl>
+                    <div class="categorys">
+                        <div class="item-left fl">
+
+
+                            <div class="subitems">
+
+                                #for(c : categorys)
+                                #if(c.parent_id == x.id)
+                                <dl class="fore1">
+
+                                    <dd><a href="category?id=#(c.id)" target="_blank" title="#(c.name)">#(c.name)<i>&gt;</i></a></dd>
+
+                                </dl>
+                                #end
+                                #end
+
+                            </div>
+                        </div>
+                        <div class="item-right fr">
+
+
+                        </div>
+                    </div>
+                </div>
+                #end
+                #end
+              <!--  <div class="list">
                     <dl class="cat">
                         <dt class="cat-name"> <a href="category?id=6418" target="_blank" title="进入NIKE AJ JORDAN频道">NIKE AJ JORDAN</a> </dt>
                         <i>&gt;</i>
@@ -2153,21 +2186,21 @@
 
                         </div>
                     </div>
-                </div>
+                </div>-->
 
             </div>
         </div>
         <div class="allnav fl" id="nav">
             <ul>
                 <li><a class="nav" href="index" title="首页">首页</a></li>
-                <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=11" title="耐克 Air Jordan馆" >耐克 Air Jordan馆</a></li>
+              <!--  <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=11" title="耐克 Air Jordan馆" >耐克 Air Jordan馆</a></li>
                 <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=10" title="商城特卖" >商城特卖</a></li>
                 <li><a class="nav " href="category?id=3" title="儿童馆" >儿童馆</a></li>
                 <li><a class="nav " href="category?id=2" title="女士馆" >女士馆</a></li>
                 <li><a class="nav " href="category?id=2800" title="男士馆" >男士馆</a></li>
                 <li><a class="nav " href="auction" title="商城拍卖" >商城拍卖</a></li>
                 <li><a class="nav " href="exchange" title="积分商城" target="_blank" >积分商城</a></li>
-                <li><a class="nav " href="article_list" title="文章资讯" target="_blank" >文章资讯</a></li>
+                <li><a class="nav " href="article_list" title="文章资讯" target="_blank" >文章资讯</a></li>-->
             </ul>
         </div>
     </div>

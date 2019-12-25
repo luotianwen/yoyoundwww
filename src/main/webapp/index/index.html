@@ -87,7 +87,7 @@
         <div class="allnav fl" id="nav">
             <ul>
                 <li><a class="nav" href="index" title="首页">首页</a></li>
-                <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=11" title="耐克 Air Jordan馆">耐克 Air
+               <!-- <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=11" title="耐克 Air Jordan馆">耐克 Air
                     Jordan馆</a></li>
                 <li><a class="nav " href="http://www.yoyound.com/topic?topic_id=10" title="商城特卖">商城特卖</a></li>
                 <li><a class="nav " href="category?id=3" title="儿童馆">儿童馆</a></li>
@@ -95,12 +95,12 @@
                 <li><a class="nav " href="category?id=2800" title="男士馆">男士馆</a></li>
                 <li><a class="nav " href="auction" title="商城拍卖">商城拍卖</a></li>
                 <li><a class="nav " href="exchange" title="积分商城" target="_blank">积分商城</a></li>
-                <li><a class="nav " href="article_list" title="文章资讯" target="_blank">文章资讯</a></li>
+                <li><a class="nav " href="article_list" title="文章资讯" target="_blank">文章资讯</a></li>-->
             </ul>
             <div class="wrap-line"><span style="left:15px;"></span></div>
         </div>
         <div class="all-cat main-bg-color">
-            <div class="list">
+           <!-- <div class="list">
                 <dl class="cat">
                     <dt class="cat-name"><a href="category?id=6418" target="_blank" title="进入NIKE AJ JORDAN频道">NIKE
                         AJ JORDAN</a></dt>
@@ -118,10 +118,14 @@
 
                     </div>
                 </div>
-            </div>
+            </div>-->
+
+
+            #for(x : session.categorys)
+            #if(x.parent_id == '0')
             <div class="list">
                 <dl class="cat">
-                    <dt class="cat-name"><a href="category?id=3115" target="_blank" title="进入优选馆频道">优选馆</a></dt>
+                    <dt class="cat-name"><a href="category?id=#(x.id)" target="_blank" title="#(x.name)">#(x.name)</a></dt>
                     <i>&gt;</i>
                 </dl>
                 <div class="categorys">
@@ -129,24 +133,16 @@
 
 
                         <div class="subitems">
-                            <dl class="fore1">
-                                <dt><a href="category?id=6384" target="_blank" title="高新商品">高新商品<i>&gt;</i></a></dt>
-                                <dd>
 
-                                </dd>
-                            </dl>
+                           #for(c : session.categorys)
+                            #if(c.parent_id == x.id)
                             <dl class="fore1">
-                                <dt><a href="category?id=6385" target="_blank" title="精选商品">精选商品<i>&gt;</i></a></dt>
-                                <dd>
 
-                                </dd>
-                            </dl>
-                            <dl class="fore1">
-                                <dt><a href="category?id=1800" target="_blank" title="健康养生">健康养生<i>&gt;</i></a></dt>
-                                <dd>
+                                <dd><a href="category?id=#(c.id)" target="_blank" title="#(c.name)">#(c.name)<i>&gt;</i></a></dd>
 
-                                </dd>
                             </dl>
+                            #end
+                            #end
 
                         </div>
                     </div>
@@ -156,89 +152,9 @@
                     </div>
                 </div>
             </div>
-            <div class="list">
-                <dl class="cat">
-                    <dt class="cat-name"><a href="category?id=6010" target="_blank" title="进入体育用品频道">体育用品</a></dt>
-                    <i>&gt;</i>
-                </dl>
-                <div class="categorys">
-                    <div class="item-left fl">
-
-
-                        <div class="subitems">
-                            <dl class="fore1">
-                                <dt><a href="category?id=6275" target="_blank" title="球鞋">球鞋<i>&gt;</i></a></dt>
-                                <dd>
-
-                                    <a href="category?id=6276" target="_blank" title="羽毛球鞋">羽毛球鞋</a>
-
-                                    <a href="category?id=6277" target="_blank" title="网球鞋">网球鞋</a>
-
-                                    <a href="category?id=6278" target="_blank" title="乒乓球鞋">乒乓球鞋</a>
-
-                                    <a href="category?id=6280" target="_blank" title="篮球鞋">篮球鞋</a>
-
-                                    <a href="category?id=6279" target="_blank" title="足球鞋">足球鞋</a>
-
-                                    <a href="category?id=6282" target="_blank" title="其他鞋类">其他鞋类</a>
-
-                                </dd>
-                            </dl>
-                            <dl class="fore1">
-                                <dt><a href="category?id=6000" target="_blank" title="球服">球服<i>&gt;</i></a></dt>
-                                <dd>
-
-                                    <a href="category?id=6009" target="_blank" title="羽毛球服">羽毛球服</a>
-
-                                    <a href="category?id=6005" target="_blank" title="网球服">网球服</a>
-
-                                    <a href="category?id=6008" target="_blank" title="乒乓球服">乒乓球服</a>
-
-                                    <a href="category?id=6006" target="_blank" title="篮球服">篮球服</a>
-
-                                    <a href="category?id=6007" target="_blank" title="足球服">足球服</a>
-
-                                    <a href="category?id=6283" target="_blank" title="其他球服">其他球服</a>
-
-                                </dd>
-                            </dl>
-                            <dl class="fore1">
-                                <dt><a href="category?id=6284" target="_blank"
-                                       title="球类及相关用品">球类及相关用品<i>&gt;</i></a></dt>
-                                <dd>
-
-                                    <a href="category?id=6287" target="_blank" title="羽毛球及用品">羽毛球及用品</a>
-
-                                    <a href="category?id=6286" target="_blank" title="网球及用品">网球及用品</a>
-
-                                    <a href="category?id=6285" target="_blank" title="乒乓球及用品">乒乓球及用品</a>
-
-                                    <a href="category?id=6289" target="_blank" title="篮球及用品">篮球及用品</a>
-
-                                    <a href="category?id=6288" target="_blank" title="足球及用品">足球及用品</a>
-
-                                    <a href="category?id=6291" target="_blank" title="其他球类用品">其他球类用品</a>
-
-                                </dd>
-                            </dl>
-                            <dl class="fore1">
-                                <dt><a href="category?id=6124" target="_blank" title="体育防护">体育防护<i>&gt;</i></a></dt>
-                                <dd>
-
-                                    <a href="category?id=6391" target="_blank" title="运动防护">运动防护</a>
-
-                                </dd>
-                            </dl>
-
-                        </div>
-                    </div>
-                    <div class="item-right fr">
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="list">
+            #end
+            #end
+          <!--  <div class="list">
                 <dl class="cat">
                     <dt class="cat-name"><a href="category?id=3117" target="_blank" title="进入鞋包/配饰频道">鞋包/配饰</a></dt>
                     <i>&gt;</i>
@@ -864,36 +780,36 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=43&amp;cat=6162" class="img-link" target="_blank" title="CamelBak/驼峰"> <img src="http://www.yoyound.com/data/brandlogo/1510216901656641267.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=40&amp;cat=6162" class="img-link" target="_blank" title="MCKINLEY麦利金"> <img src="http://www.yoyound.com/data/brandlogo/1510399144412543338.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=11&amp;cat=6162" class="img-link" target="_blank" title="kairoo开途"> <img src="http://www.yoyound.com/data/brandlogo/1509632770562111568.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=98&amp;cat=6162" class="img-link" target="_blank" title="探路者"> <img src="http://www.yoyound.com/data/brandlogo/1515140977724595114.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=85&amp;cat=6162" class="img-link" target="_blank" title="MobiGarden牧高笛"> <img src="http://www.yoyound.com/data/brandlogo/1511516453286895363.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=93&amp;cat=6162" class="img-link" target="_blank" title="NORTHLAND诺诗兰"> <img src="http://www.yoyound.com/data/brandlogo/1515139894533534558.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=66&amp;cat=6162" class="img-link" target="_blank" title="Moonsunfavor慕山"> <img src="http://www.yoyound.com/data/brandlogo/1510559963152241724.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=87&amp;cat=6162" class="img-link" target="_blank" title="幸运叶子"> <img src="http://www.yoyound.com/data/brandlogo/1511762828593819855.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=43&amp;cat=6162" class="img-link" target="_blank" title="CamelBak/驼峰"> <img src="http://www.yoyound.com/data/brandlogo/1510216901656641267.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=40&amp;cat=6162" class="img-link" target="_blank" title="MCKINLEY麦利金"> <img src="http://www.yoyound.com/data/brandlogo/1510399144412543338.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=11&amp;cat=6162" class="img-link" target="_blank" title="kairoo开途"> <img src="http://www.yoyound.com/data/brandlogo/1509632770562111568.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=98&amp;cat=6162" class="img-link" target="_blank" title="探路者"> <img src="http://www.yoyound.com/data/brandlogo/1515140977724595114.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=85&amp;cat=6162" class="img-link" target="_blank" title="MobiGarden牧高笛"> <img src="http://www.yoyound.com/data/brandlogo/1511516453286895363.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=93&amp;cat=6162" class="img-link" target="_blank" title="NORTHLAND诺诗兰"> <img src="http://www.yoyound.com/data/brandlogo/1515139894533534558.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=66&amp;cat=6162" class="img-link" target="_blank" title="Moonsunfavor慕山"> <img src="http://www.yoyound.com/data/brandlogo/1510559963152241724.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=87&amp;cat=6162" class="img-link" target="_blank" title="幸运叶子"> <img src="http://www.yoyound.com/data/brandlogo/1511762828593819855.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -953,22 +869,22 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=7&amp;cat=6292" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=33&amp;cat=6292" class="img-link" target="_blank" title="Speedo速比涛"> <img src="http://www.yoyound.com/data/brandlogo/1509636555872033898.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=34&amp;cat=6292" class="img-link" target="_blank" title="TECNOPRO"> <img src="http://www.yoyound.com/data/brandlogo/1509636421389774212.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=87&amp;cat=6292" class="img-link" target="_blank" title="幸运叶子"> <img src="http://www.yoyound.com/data/brandlogo/1511762828593819855.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=26&amp;cat=6292" class="img-link" target="_blank" title="Acecamp路客"> <img src="http://www.yoyound.com/data/brandlogo/1509635712151011111.jpg" width="90" height="36" /> </a>
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=7&amp;cat=6292" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=33&amp;cat=6292" class="img-link" target="_blank" title="Speedo速比涛"> <img src="http://www.yoyound.com/data/brandlogo/1509636555872033898.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=34&amp;cat=6292" class="img-link" target="_blank" title="TECNOPRO"> <img src="http://www.yoyound.com/data/brandlogo/1509636421389774212.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=87&amp;cat=6292" class="img-link" target="_blank" title="幸运叶子"> <img src="http://www.yoyound.com/data/brandlogo/1511762828593819855.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=26&amp;cat=6292" class="img-link" target="_blank" title="Acecamp路客"> <img src="http://www.yoyound.com/data/brandlogo/1509635712151011111.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1048,20 +964,20 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=18&amp;cat=6251" class="img-link" target="_blank" title="CRAFT"> <img src="http://www.yoyound.com/data/brandlogo/1509633509919948225.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=30&amp;cat=6251" class="img-link" target="_blank" title="SALOMON萨洛蒙"> <img src="http://www.yoyound.com/data/brandlogo/1509636980093327182.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=11&amp;cat=6251" class="img-link" target="_blank" title="kairoo开途"> <img src="http://www.yoyound.com/data/brandlogo/1509632770562111568.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=60&amp;cat=6251" class="img-link" target="_blank" title="oakley欧克利"> <img src="http://www.yoyound.com/data/brandlogo/1510556783140488459.jpg" width="90" height="36" /> </a>
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=18&amp;cat=6251" class="img-link" target="_blank" title="CRAFT"> <img src="http://www.yoyound.com/data/brandlogo/1509633509919948225.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=30&amp;cat=6251" class="img-link" target="_blank" title="SALOMON萨洛蒙"> <img src="http://www.yoyound.com/data/brandlogo/1509636980093327182.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=11&amp;cat=6251" class="img-link" target="_blank" title="kairoo开途"> <img src="http://www.yoyound.com/data/brandlogo/1509632770562111568.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=60&amp;cat=6251" class="img-link" target="_blank" title="oakley欧克利"> <img src="http://www.yoyound.com/data/brandlogo/1510556783140488459.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1160,20 +1076,20 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=7&amp;cat=6303" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=12&amp;cat=6303" class="img-link" target="_blank" title="Converse匡威"> <img src="http://www.yoyound.com/data/brandlogo/1509631449126588057.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=45&amp;cat=6303" class="img-link" target="_blank" title="ENERGETICS"> <img src="http://www.yoyound.com/data/brandlogo/1510217202671712110.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=30&amp;cat=6303" class="img-link" target="_blank" title="SALOMON萨洛蒙"> <img src="http://www.yoyound.com/data/brandlogo/1509636980093327182.jpg" width="90" height="36" /> </a>
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=7&amp;cat=6303" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=12&amp;cat=6303" class="img-link" target="_blank" title="Converse匡威"> <img src="http://www.yoyound.com/data/brandlogo/1509631449126588057.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=45&amp;cat=6303" class="img-link" target="_blank" title="ENERGETICS"> <img src="http://www.yoyound.com/data/brandlogo/1510217202671712110.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=30&amp;cat=6303" class="img-link" target="_blank" title="SALOMON萨洛蒙"> <img src="http://www.yoyound.com/data/brandlogo/1509636980093327182.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1262,18 +1178,18 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=10&amp;cat=2700" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=14&amp;cat=2700" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=26&amp;cat=2700" class="img-link" target="_blank" title="Acecamp路客"> <img src="http://www.yoyound.com/data/brandlogo/1509635712151011111.jpg" width="90" height="36" /> </a>
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=10&amp;cat=2700" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=14&amp;cat=2700" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=26&amp;cat=2700" class="img-link" target="_blank" title="Acecamp路客"> <img src="http://www.yoyound.com/data/brandlogo/1509635712151011111.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1447,22 +1363,22 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=4&amp;cat=2800" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=7&amp;cat=2800" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=10&amp;cat=2800" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=14&amp;cat=2800" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=60&amp;cat=2800" class="img-link" target="_blank" title="oakley欧克利"> <img src="http://www.yoyound.com/data/brandlogo/1510556783140488459.jpg" width="90" height="36" /> </a>
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=4&amp;cat=2800" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=7&amp;cat=2800" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=10&amp;cat=2800" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=14&amp;cat=2800" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=60&amp;cat=2800" class="img-link" target="_blank" title="oakley欧克利"> <img src="http://www.yoyound.com/data/brandlogo/1510556783140488459.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1628,34 +1544,34 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=4&amp;cat=2" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=7&amp;cat=2" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=12&amp;cat=2" class="img-link" target="_blank" title="Converse匡威"> <img src="http://www.yoyound.com/data/brandlogo/1509631449126588057.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=14&amp;cat=2" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=15&amp;cat=2" class="img-link" target="_blank" title="The north face乐斯菲斯"> <img src="http://www.yoyound.com/data/brandlogo/1509632011830164452.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=1&amp;cat=2" class="img-link" target="_blank" title="JACK WOLFSKIN狼爪"> <img src="http://www.yoyound.com/data/brandlogo/1509631209610759542.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=85&amp;cat=2" class="img-link" target="_blank" title="MobiGarden牧高笛"> <img src="http://www.yoyound.com/data/brandlogo/1511516453286895363.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=59&amp;cat=2" class="img-link" target="_blank" title="Kenmont卡蒙"> <img src="http://www.yoyound.com/data/brandlogo/1510556622944921389.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=4&amp;cat=2" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=7&amp;cat=2" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=12&amp;cat=2" class="img-link" target="_blank" title="Converse匡威"> <img src="http://www.yoyound.com/data/brandlogo/1509631449126588057.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=14&amp;cat=2" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=15&amp;cat=2" class="img-link" target="_blank" title="The north face乐斯菲斯"> <img src="http://www.yoyound.com/data/brandlogo/1509632011830164452.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=1&amp;cat=2" class="img-link" target="_blank" title="JACK WOLFSKIN狼爪"> <img src="http://www.yoyound.com/data/brandlogo/1509631209610759542.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=85&amp;cat=2" class="img-link" target="_blank" title="MobiGarden牧高笛"> <img src="http://www.yoyound.com/data/brandlogo/1511516453286895363.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=59&amp;cat=2" class="img-link" target="_blank" title="Kenmont卡蒙"> <img src="http://www.yoyound.com/data/brandlogo/1510556622944921389.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
@@ -1732,52 +1648,52 @@
                         </div>
                     </div>
                     <div class="item-right fr">
-                        <!-- <div class="item-brands">
+                        &lt;!&ndash; <div class="item-brands">
 
               <div class="brands-inner">
-                  <!-->
-                        <!--  <a href="brand?id=4&amp;cat=3" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=7&amp;cat=3" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=8&amp;cat=3" class="img-link" target="_blank" title="Asics亚瑟士"> <img src="http://www.yoyound.com/data/brandlogo/1509630656082053151.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=10&amp;cat=3" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=14&amp;cat=3" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=48&amp;cat=3" class="img-link" target="_blank" title="FUNKO"> <img src="http://www.yoyound.com/data/brandlogo/1510216751697630634.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=9&amp;cat=3" class="img-link" target="_blank" title="ZAMS 赞斯特"> <img src="http://www.yoyound.com/data/brandlogo/1509632213446619766.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--  <a href="brand?id=40&amp;cat=3" class="img-link" target="_blank" title="MCKINLEY麦利金"> <img src="http://www.yoyound.com/data/brandlogo/1510399144412543338.jpg" width="90" height="36" /> </a>
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!---->
-                        <!--
-                  <!--                </div>
+                  &lt;!&ndash;dash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=4&amp;cat=3" class="img-link" target="_blank" title="NIKE 耐克"> <img src="http://www.yoyound.com/data/brandlogo/1509629972122184219.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=7&amp;cat=3" class="img-link" target="_blank" title="Adidas阿迪达斯"> <img src="http://www.yoyound.com/data/brandlogo/1509630242863120936.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=8&amp;cat=3" class="img-link" target="_blank" title="Asics亚瑟士"> <img src="http://www.yoyound.com/data/brandlogo/1509630656082053151.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=10&amp;cat=3" class="img-link" target="_blank" title="MOPS联络互动"> <img src="http://www.yoyound.com/data/brandlogo/1509631063135651265.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=14&amp;cat=3" class="img-link" target="_blank" title="Puma彪马"> <img src="http://www.yoyound.com/data/brandlogo/1509631618076360950.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=48&amp;cat=3" class="img-link" target="_blank" title="FUNKO"> <img src="http://www.yoyound.com/data/brandlogo/1510216751697630634.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=9&amp;cat=3" class="img-link" target="_blank" title="ZAMS 赞斯特"> <img src="http://www.yoyound.com/data/brandlogo/1509632213446619766.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;  <a href="brand?id=40&amp;cat=3" class="img-link" target="_blank" title="MCKINLEY麦利金"> <img src="http://www.yoyound.com/data/brandlogo/1510399144412543338.jpg" width="90" height="36" /> </a>
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;&ndash;&gt;
+                        &lt;!&ndash;
+                  &lt;!&ndash;                </div>
 
-              </div>-->
+              </div>&ndash;&gt;
 
                     </div>
                 </div>
-            </div>
+            </div>-->
 
         </div>
     </div>
@@ -1827,35 +1743,28 @@
 <script type="text/javascript" src="themes/pc_paleng_moban/js/nav.js"></script>
 <div class="banner">
     <ul id="fullScreenSlides" class="full-screen-slides">
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20180302comdqi.png) center no-repeat; display:list-item">
-            <a href="http://www.yoyound.com" target="_blank" title="">&nbsp;</a>
+        <li style=" background:url(http://image.yoyound.com/userfiles/1/images/carousel/carousel/2019/04/473c6358694405b3718c8725b3239a05444ad751%5B1%5D.jpg) center no-repeat; display:list-item">
+
         </li>
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20171114gwjabw.jpg) center no-repeat;display: none; ">
-            <a href="http://www.yoyound.com/brand?u=78&id=50" target="_blank" title="">&nbsp;</a>
+        <li style=" background:url(http://image.yoyound.com/userfiles/1/images/carousel/carousel/2019/04/0fd8917e5f2594709f9826110e221e409e292243%5B1%5D.jpg) center no-repeat;display: none; ">
+
         </li>
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20171123monyta.png) center no-repeat;display: none; ">
-            <a href="http://www.yoyound.com/brand?u=78&id=85" target="_blank" title="">&nbsp;</a>
+        <li style=" background:url(http://image.yoyound.com/userfiles/1/images/carousel/carousel/2019/04/813fe409aac8e8661920012cf3247d06755e1152%5B1%5D.jpg) center no-repeat;display: none; ">
+
         </li>
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20171103xyephz.png) center no-repeat;display: none; ">
-            <a href="http://www.yoyound.com/search?encode=YTozOntzOjQ6InR5cGUiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czoxMjoi5ZOl5Lym5q%2bU5LqaIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTUxMDA1MDkyODt9"
-               target="_blank" title="">&nbsp;</a>
+        <li style=" background:url(http://image.yoyound.com/userfiles/1/images/carousel/carousel/2019/04/bb5321ef7e6829bdadfc692b2d8658a8a1ac98f4%5B1%5D.jpg) center no-repeat;display: none; ">
+
         </li>
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20171103vojywj.png) center no-repeat;display: none; ">
-            <a href="http://www.yoyound.com/brand?id=9" target="_blank" title="">&nbsp;</a>
-        </li>
-        <li style=" background:url(http://www.yoyound.com/data/afficheimg/20171103jxwptc.png) center no-repeat;display: none; ">
-            <a href="http://www.yoyound.com/goods?id=340" target="_blank" title="">&nbsp;</a>
-        </li>
+
     </ul>
     <ul class="full-screen-slides-pagination">
         <li class="current"><a href="javascript:;">1</a></li>
         <li><a href="javascript:;">2</a></li>
         <li><a href="javascript:;">3</a></li>
         <li><a href="javascript:;">4</a></li>
-        <li><a href="javascript:;">5</a></li>
-        <li><a href="javascript:;">6</a></li>
+
     </ul>
-    <div class="focus-trigeminy">
+    <!--<div class="focus-trigeminy">
         <div class="carousel">
             <ul class="box">
 
@@ -1880,7 +1789,7 @@
         </div>
         <a href="javascript:void(0);" class="prev" title="上一个">&lt;</a>
         <a href="javascript:void(0);" class="next" title="下一个">&gt;</a>
-    </div>
+    </div>-->
     <script type="text/javascript">
         $(function () {
             $('.focus-trigeminy').hover(function () {
@@ -1907,20 +1816,16 @@
             </span>
                         </p>
                         <p class="goods-thumb">
-                            <a href="goods?id=561" title="Saucony圣康尼女鞋2017秋季JAZZ LOWPRO 复古运动鞋跑步鞋S1866"><img
-                                    src="http://www.yoyound.com/images/201711/thumb_img/561_thumb_G_1510393402879.jpg"
-                                    alt="Saucony圣康尼女鞋2017秋季JAZZ LOWPRO 复古运动鞋跑步鞋S1866"></a>
+                            <a href="goods?id=#(mx.id)" title="#(mx.name)"><img src="http://image.yoyound.com/#(mx.logo)" alt="#(mx.name)"></a>
                         </p>
-                        <p class="goods-name"><a href="goods?id=561"
-                                                 title="Saucony圣康尼女鞋2017秋季JAZZ LOWPRO 复古运动鞋跑步鞋S1866">Saucony圣康尼女鞋2017秋季JAZZ
-                            L...</a></p>
+                        <p class="goods-name"><a href="goods?id=561" title="#(mx.name)">#(mx.name)</a></p>
                         <p class="goods-price">
-          <span class="main-color">
+                      <span class="main-color">
 
-          ¥399.00
+                      ¥#(mx.price)
 
-          </span>
-                            <span class="goods-discount main-color">7折</span>
+                      </span>
+                            <span class="goods-discount main-color">市场价:￥#(mx.market_price)</span>
                         </p>
                     </div>
                 </li>
@@ -1956,28 +1861,20 @@
                     </li>
                 </ul>
             </div>
-
-            <!--<div class="tabs-panel tabs-hide">
-						<a href="apply_index" title="申请商家入驻；已提交申请，可查看当前审核状态。" class="store-join-btn" target="_blank">&nbsp;</a>
-						<a href="supplier" target="_blank" class="store-join-help">
-							<i class="icon-cog"></i>
-							登录商家管理中心
-						</a>
-					</div>-->
         </div>
     </div>
 </div>
 <div class="w1210 ad-groups">
     <div class="mc">
         <div class="sc-list">
-
+              #for(x:session.getsjcategorys)
             <div class="item w-bg">
                 <a class="s-img" target="_blank"
-                   href="affiche?ad_id=84&uri=http://www.yoyound.com/search?encode=YTozOntzOjQ6InR5cGUiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czo5OiLlp4vnpZbpuJ8iO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxNTEwNjUyNDg3O30="><img
-                        width="242px" height="350px" src="http://www.yoyound.com/data/afficheimg/1510652639872384328.png"/></a>
+                   href="category?id=#(x.id)"><img
+                        width="242px" height="350px" src="http://image.yoyound.com/#(x.logo)"/></a>
             </div>
-
-            <div class="item w-bg">
+                #end
+            <!--<div class="item w-bg">
                 <a class="s-img" target="_blank" href="affiche?ad_id=85&uri=http://www.yoyound.com/brand?id=39"><img
                         width="242px" height="350px" src="http://www.yoyound.com/data/afficheimg/1510653178073560102.png"/></a>
             </div>
@@ -1997,7 +1894,7 @@
                    href="affiche?ad_id=88&uri=http://www.yoyound.com/category?id=6251"><img width="242px"
                                                                                                     height="350px"
                                                                                                     src="http://www.yoyound.com/data/afficheimg/1510652666845834881.png"/></a>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
@@ -2157,329 +2054,126 @@ function qiehuanResponse(result){
             <h3>新品上市</h3>
         </li>
     </ul>
-    <div class="tabs-panel sale-goods-list tabs-hide">
-        <ul>
 
-
-        </ul>
-    </div>
 
     <div class="tabs-panel sale-goods-list tabs-hide">
         <ul>
+            #for(x:fkqgs)
             <li>
                 <dl>
                     <dt class="goods-name">
-                        <a target="_blank" href="goods?id=2392" title="">SUUNTO颂拓斯巴达极速光电心率骑行跑步健身智...</a>
+                        <a target="_blank" href="goods?id=#(x.id)" title="">#(x.name)...</a>
                     </dt>
                     <dd class="goods-thumb">
-                        <a target="_blank" href="goods?id=2392" title="">
-                            <img src="http://www.yoyound.com/images/201803/thumb_img/2392_thumb_G_1521536201816.jpg" alt="">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">
+                            <img src="http://image.yoyound.com/#(x.logo) " alt="">
                         </a>
                     </dd>
                     <dd class="goods-price">
                         商城价：
                         <em class="price">
-                            4169.00 </em>
+                            #(x.price) </em>
                     </dd>
                 </dl>
             </li>
+            #end
+        </ul>
+    </div>
+
+    <div class="tabs-panel sale-goods-list tabs-hide">
+        <ul>
+            #for(x:rxphs)
             <li>
                 <dl>
                     <dt class="goods-name">
-                        <a target="_blank" href="goods?id=327" title="">日本ZAMST赞斯特护膝EK-3 跑步护膝健身网...</a>
+                        <a target="_blank" href="goods?id=#(x.id)" title="">#(x.name)...</a>
                     </dt>
                     <dd class="goods-thumb">
-                        <a target="_blank" href="goods?id=327" title="">
-                            <img src="http://www.yoyound.com/images/201710/thumb_img/_thumb_P_1509432829273.jpg" alt="">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">
+                            <img src="http://image.yoyound.com/#(x.logo) " alt="">
                         </a>
                     </dd>
                     <dd class="goods-price">
                         商城价：
                         <em class="price">
-                            340.00 </em>
+                            #(x.price) </em>
                     </dd>
                 </dl>
             </li>
+            #end
         </ul>
     </div>
-
     <div class="tabs-panel sale-goods-list tabs-hide">
         <ul>
-
+            #for(x:scrxs)
             <li>
                 <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=530" title="MARROW406B原装正品无线蓝牙头戴式耳机">MARROW406B原装正品无线蓝牙头戴式耳机</a>
+                    <dt class="goods-name">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">#(x.name)...</a>
                     </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=530" title="MARROW406B原装正品无线蓝牙头戴式耳机">
-                        <img src="http://www.yoyound.com/images/201711/thumb_img/530_thumb_G_1510288805168.jpg" alt="MARROW406B原装正品无线蓝牙头戴式耳机">
-                    </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥499.00
-
-                    </em></dd>
+                    <dd class="goods-thumb">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">
+                            <img src="http://image.yoyound.com/#(x.logo) " alt="">
+                        </a>
+                    </dd>
+                    <dd class="goods-price">
+                        商城价：
+                        <em class="price">
+                            #(x.price) </em>
+                    </dd>
                 </dl>
             </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=9201"
-                                              title="Crocs卡骆驰童鞋2019夏款新款德鲁卡骆班人字纹小克骆格合作款凉鞋205244-066">Crocs卡骆驰童鞋2019夏款新款德鲁卡骆班人...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=9201"
-                                               title="Crocs卡骆驰童鞋2019夏款新款德鲁卡骆班人字纹小克骆格合作款凉鞋205244-066"> <img
-                            src="http://www.yoyound.com/images/201902/thumb_img/9201_thumb_G_1550656280041.jpg"
-                            alt="Crocs卡骆驰童鞋2019夏款新款德鲁卡骆班人字纹小克骆格合作款凉鞋205244-066"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥190.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=9202"
-                                              title="Crocs卡骆驰童鞋2019夏款新品休闲趣味学院酷闪图洞洞鞋沙滩凉鞋拖205000-6NP">Crocs卡骆驰童鞋2019夏款新品休闲趣味学院...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=9202"
-                                               title="Crocs卡骆驰童鞋2019夏款新品休闲趣味学院酷闪图洞洞鞋沙滩凉鞋拖205000-6NP"> <img
-                            src="http://www.yoyound.com/images/201902/thumb_img/9202_thumb_G_1550656597361.jpg"
-                            alt="Crocs卡骆驰童鞋2019夏款新品休闲趣味学院酷闪图洞洞鞋沙滩凉鞋拖205000-6NP"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥209.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=8403"
-                                              title="Adidas阿迪达斯女装2019春季新品运动休闲连帽防风针织夹克外套DU0669">Adidas阿迪达斯女装2019春季新品运动休闲...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=8403"
-                                               title="Adidas阿迪达斯女装2019春季新品运动休闲连帽防风针织夹克外套DU0669"> <img
-                            src="http://www.yoyound.com/images/201901/thumb_img/8403_thumb_G_1547707714801.jpg"
-                            alt="Adidas阿迪达斯女装2019春季新品运动休闲连帽防风针织夹克外套DU0669"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥362.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=3321"
-                                              title="[早市]阿迪达斯男裤秋季收口修身透气休闲跑步运动裤长裤CE9345">[早市]阿迪达斯男裤秋季收口修身透气休闲跑步运动...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=3321"
-                                               title="[早市]阿迪达斯男裤秋季收口修身透气休闲跑步运动裤长裤CE9345"> <img
-                            src="http://www.yoyound.com/images/201807/thumb_img/3321_thumb_G_1531186700396.jpg"
-                            alt="[早市]阿迪达斯男裤秋季收口修身透气休闲跑步运动裤长裤CE9345"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥259.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
+            #end
         </ul>
     </div>
-
     <div class="tabs-panel sale-goods-list tabs-hide">
         <ul>
-
+            #for(x:scjps)
             <li>
                 <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=328"
-                                              title="日本ZAMST赞斯特儿童护踝足球 篮球/排球/网球/户外 运动跑步护踝">日本ZAMST赞斯特儿童护踝足球
-                        篮球/排球/网...</a></dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=328"> <img
-                            src="http://www.yoyound.com/images/201710/thumb_img/_thumb_P_1509433960051.jpg"
-                            alt="日本ZAMST赞斯特儿童护踝足球 篮球/排球/网球/户外 运动跑步护踝"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥307.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=1034"
-                                              title="牧高笛户外装备 儿童爬爬垫防潮XPE无毒环保防撕裂防水折叠野餐垫">牧高笛户外装备 儿童爬爬垫防潮XPE无毒环保防撕...</a>
+                    <dt class="goods-name">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">#(x.name)...</a>
                     </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=1034"> <img
-                            src="http://www.yoyound.com/images/201711/thumb_img/1034_thumb_G_1511858453991.jpg"
-                            alt="牧高笛户外装备 儿童爬爬垫防潮XPE无毒环保防撕裂防水折叠野餐垫"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥99.00
-
-                    </em></dd>
+                    <dd class="goods-thumb">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">
+                            <img src="http://image.yoyound.com/#(x.logo) " alt="">
+                        </a>
+                    </dd>
+                    <dd class="goods-price">
+                        商城价：
+                        <em class="price">
+                            #(x.price) </em>
+                    </dd>
                 </dl>
             </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=341"
-                                              title="MOPS忻风智能随身空气净化器耗材防雾霾防PM2.5电动智能儿童口罩">MOPS忻风智能随身空气净化器耗材防雾霾防PM2...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=341"> <img
-                            src="http://www.yoyound.com/images/201711/thumb_img/_thumb_P_1509549651842.jpg"
-                            alt="MOPS忻风智能随身空气净化器耗材防雾霾防PM2.5电动智能儿童口罩"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥309.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=918"
-                                              title="PUMA彪马童鞋evoSPEED 17.5 TT训练儿童款碎钉足球鞋104038-02">PUMA彪马童鞋evoSPEED 17.5
-                        TT...</a></dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=918"> <img
-                            src="http://www.yoyound.com/images/201711/thumb_img/918_thumb_G_1511680563197.jpg"
-                            alt="PUMA彪马童鞋evoSPEED 17.5 TT训练儿童款碎钉足球鞋104038-02"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥229.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=515"
-                                              title="李宁篮球鞋男减震运动鞋球鞋高帮战靴ABPM011 -3宝蓝色/基础白 40">李宁篮球鞋男减震运动鞋球鞋高帮战靴ABPM011...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=515"> <img
-                            src="http://www.yoyound.com/images/201711/thumb_img/515_thumb_G_1510220512678.jpg"
-                            alt="李宁篮球鞋男减震运动鞋球鞋高帮战靴ABPM011 -3宝蓝色/基础白 40"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥238.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
+            #end
         </ul>
     </div>
-
-    <div class="tabs-panel sale-goods-list">
+    <div class="tabs-panel sale-goods-list tabs-hide">
         <ul>
-
+            #for(x:xps)
             <li>
                 <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=1991"
-                                              title="CONVERSE匡威男装 2018春新款运动休闲长袖T恤圆领套头衫10007832">CONVERSE匡威男装
-                        2018春新款运动休闲...</a></dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=1991"
-                                               title="CONVERSE匡威男装 2018春新款运动休闲长袖T恤圆领套头衫10007832"> <img
-                            src="http://www.yoyound.com/images/201802/thumb_img/1991_thumb_G_1517735808856.jpg"
-                            alt="CONVERSE匡威男装 2018春新款运动休闲长袖T恤圆领套头衫10007832"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥179.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=1700"
-                                              title="Nike 耐克篮球2018杜兰特篮球标准7号中学生防滑室外水泥地耐磨篮球">Nike
-                        耐克篮球2018杜兰特篮球标准7号中学...</a></dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=1700"
-                                               title="Nike 耐克篮球2018杜兰特篮球标准7号中学生防滑室外水泥地耐磨篮球"> <img
-                            src="http://www.yoyound.com/images/201712/thumb_img/1700_thumb_G_1514624472862.jpg"
-                            alt="Nike 耐克篮球2018杜兰特篮球标准7号中学生防滑室外水泥地耐磨篮球"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥109.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=2005"
-                                              title="PUMA彪马男鞋2018春季新款运动休闲鞋透气耐磨跑步鞋190484-01">PUMA彪马男鞋2018春季新款运动休闲鞋透气耐...</a>
+                    <dt class="goods-name">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">#(x.name)...</a>
                     </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=2005"
-                                               title="PUMA彪马男鞋2018春季新款运动休闲鞋透气耐磨跑步鞋190484-01"> <img
-                            src="http://www.yoyound.com/images/201802/thumb_img/2005_thumb_G_1517818063958.jpg"
-                            alt="PUMA彪马男鞋2018春季新款运动休闲鞋透气耐磨跑步鞋190484-01"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥749.00
-
-                    </em></dd>
+                    <dd class="goods-thumb">
+                        <a target="_blank" href="goods?id=#(x.id)" title="">
+                            <img src="http://image.yoyound.com/#(x.logo) " alt="">
+                        </a>
+                    </dd>
+                    <dd class="goods-price">
+                        商城价：
+                        <em class="price">
+                            #(x.price) </em>
+                    </dd>
                 </dl>
             </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=1718"
-                                              title="NIKE(耐克)2018新款运动休闲男鞋透气缓震耐磨篮球鞋917506-100">NIKE(耐克)2018新款运动休闲男鞋透气缓震...</a>
-                    </dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=1718"
-                                               title="NIKE(耐克)2018新款运动休闲男鞋透气缓震耐磨篮球鞋917506-100"> <img
-                            src="http://www.yoyound.com/images/201801/thumb_img/1718_thumb_G_1514864698953.jpg"
-                            alt="NIKE(耐克)2018新款运动休闲男鞋透气缓震耐磨篮球鞋917506-100"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥568.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
-
-            <li>
-                <dl>
-                    <dt class="goods-name"><a target="_blank" href="goods?id=1983"
-                                              title="NIKE男鞋AIR PRESTO 2018复刻休闲运动鞋学生跑步鞋848187-009">NIKE男鞋AIR PRESTO
-                        2018复刻休...</a></dt>
-                    <dd class="goods-thumb"><a target="_blank" href="goods?id=1983"
-                                               title="NIKE男鞋AIR PRESTO 2018复刻休闲运动鞋学生跑步鞋848187-009"> <img
-                            src="http://www.yoyound.com/images/201802/thumb_img/1983_thumb_G_1517723463690.jpg"
-                            alt="NIKE男鞋AIR PRESTO 2018复刻休闲运动鞋学生跑步鞋848187-009"> </a></dd>
-                    <dd class="goods-price"> 商城价： <em class="price">
-
-                        ¥559.00
-
-                    </em></dd>
-                </dl>
-            </li>
-
+            #end
         </ul>
     </div>
+
+
 
 
 </div>
@@ -3311,7 +3005,7 @@ function qiehuanResponse(result){
             </div>
         </div>
     </div>
-    <div class="floor" floor="2" color="#ff0000">
+   <!-- <div class="floor" floor="2" color="#ff0000">
         <div class="floor-layout">
             <a href="affiche?ad_id=122&uri=http://www.yoyound.com/category?id=6010" target="_blank"
                class="banner-ad">
@@ -4105,7 +3799,7 @@ function qiehuanResponse(result){
                         </div>
                     </div>
                 </div>
-                <!--                 <div class="floor-brand">
+                &lt;!&ndash;                 <div class="floor-brand">
 					<div class="tabs-brand">
 							<div class="brand">
 								<div class="brand-con">
@@ -4192,7 +3886,7 @@ function qiehuanResponse(result){
 						</script>
 					</div>
 				</div>
-                  -->
+                  &ndash;&gt;
             </div>
         </div>
     </div>
@@ -4985,7 +4679,7 @@ function qiehuanResponse(result){
                         </div>
                     </div>
                 </div>
-                <!--                 <div class="floor-brand">
+                &lt;!&ndash;                 <div class="floor-brand">
 					<div class="tabs-brand">
 							<div class="brand">
 								<div class="brand-con">
@@ -5072,7 +4766,7 @@ function qiehuanResponse(result){
 						</script>
 					</div>
 				</div>
-                  -->
+                  &ndash;&gt;
             </div>
         </div>
     </div>
@@ -5701,7 +5395,7 @@ function qiehuanResponse(result){
                         </div>
                     </div>
                 </div>
-                <!--                 <div class="floor-brand">
+                &lt;!&ndash;                 <div class="floor-brand">
 					<div class="tabs-brand">
 							<div class="brand">
 								<div class="brand-con">
@@ -5788,7 +5482,7 @@ function qiehuanResponse(result){
 						</script>
 					</div>
 				</div>
-                  -->
+                  &ndash;&gt;
             </div>
         </div>
     </div>
@@ -6512,7 +6206,7 @@ function qiehuanResponse(result){
                         </div>
                     </div>
                 </div>
-                <!--                 <div class="floor-brand">
+                &lt;!&ndash;                 <div class="floor-brand">
 					<div class="tabs-brand">
 							<div class="brand">
 								<div class="brand-con">
@@ -6584,7 +6278,7 @@ function qiehuanResponse(result){
 						</script>
 					</div>
 				</div>
-                  -->
+                  &ndash;&gt;
             </div>
         </div>
     </div>
@@ -7247,7 +6941,7 @@ function qiehuanResponse(result){
                         </div>
                     </div>
                 </div>
-                <!--                 <div class="floor-brand">
+                &lt;!&ndash;                 <div class="floor-brand">
 					<div class="tabs-brand">
 							<div class="brand">
 								<div class="brand-con">
@@ -7324,7 +7018,7 @@ function qiehuanResponse(result){
 						</script>
 					</div>
 				</div>
-                  -->
+                  &ndash;&gt;
             </div>
         </div>
     </div>
@@ -7923,7 +7617,7 @@ function qiehuanResponse(result){
                                     <div class="wrap">
                                         <a target="_blank" href="goods?id=7392"
                                            title="PRO TOUCH男女2018春款训练健身透气肘关节防护护具 260034-900050 悠氧户外运动商城">
-                                            <img src="http://www.yoyound.com/images/201811/thumb_img/7392_thumb_G_1543045808685.jpg"
+                                            <img src="http://image.yoyound.com/images/201811/thumb_img/7392_thumb_G_1543045808685.jpg"
                                                  alt="PRO TOUCH男女2018春款训练健身透气肘关节防护护具 260034-900050 悠氧户外运动商城"
                                                  height="140" width="140" class="pic_img_7392">
                                         </a>
@@ -7946,7 +7640,7 @@ function qiehuanResponse(result){
 
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 <script type="text/javascript" src="themes/pc_paleng_moban/js/indexPrivate.min.js"></script>
 <div class="right-sidebar-con">
@@ -8165,40 +7859,13 @@ function qiehuanResponse(result){
 
 <div class="elevator">
     <div class="elevator-floor">
+
         <a class="smooth" href="javascript:;">
             <b class="fs">1F</b>
             <em class="fs-name">健身</em>
             <i class="fs-line"></i>
         </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">2F</b>
-            <em class="fs-name">体育用品</em>
-            <i class="fs-line"></i>
-        </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">3F</b>
-            <em class="fs-name">户外服饰</em>
-            <i class="fs-line"></i>
-        </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">4F</b>
-            <em class="fs-name">户外鞋包</em>
-            <i class="fs-line"></i>
-        </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">5F</b>
-            <em class="fs-name">骑行</em>
-            <i class="fs-line"></i>
-        </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">6F</b>
-            <em class="fs-name">户外露营</em>
-            <i class="fs-line"></i>
-        </a>
-        <a class="smooth" href="javascript:;">
-            <b class="fs">7F</b>
-            <em class="fs-name">户外运动</em>
-        </a>
+
     </div>
 </div>
 </body>

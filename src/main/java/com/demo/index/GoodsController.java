@@ -14,9 +14,10 @@ public class GoodsController extends Controller {
         String id=getPara("id");
         Record goods= Db.findFirstByCache("goods",id, Db.getSqlPara("getGoodsInfo").getSql(),id);
         set("goods",goods);
+        Record d= Db.findFirstByCache("goodsd",id, Db.getSqlPara("getGoodsDInfo").getSql(),id);
+        set("imgs",goods.getStr("imgs").split("\\|"));
+         set("d",d);
 
-        List<Record> imgs=Db.findByCache("imgs",id,Db.getSqlPara("getGoodscol").getSql(),id);
-        set("imgs",imgs);
         List<Record> brands= Db .findByCache("brands","brands",Db.getSqlPara("getBrand").getSql());
         for (Record b:brands){
             if(goods.getStr("brand_id").equals(b.getStr("brand_id"))){

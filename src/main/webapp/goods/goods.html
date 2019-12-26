@@ -42,9 +42,9 @@
     <div id="product-intro" class="goods-info">
         <div id="preview">
             <div class="goods-img" id="li_492" style="position:relative; z-index:3;">
-                <a href="/#(goods.original_img)" class="MagicZoom" id="zoom" rel="zoom-position: right;">
+                <a href="http://image.yoyound.com/#(goods.original_img)" class="MagicZoom" id="zoom" rel="zoom-position: right;">
 
-                    <img  src="/#(goods.original_img)" class="goodsimg pic_img_492" id="goods_bimg" width="400" height="400" />
+                    <img  src="http://image.yoyound.com/#(goods.original_img)" class="goodsimg pic_img_492" id="goods_bimg" width="400" height="400" />
 
                 </a>
             </div>
@@ -57,8 +57,8 @@
                         <div id="demo1" style="float:left;">
                             <ul id="goods_gallery">
                                 #for(x : imgs)
-                                <li> <a href="/#(x.img_original)" rel="zoom-id: zoom;" rev="/#(x.img_url)"    >
-                                    <img src="/#(x.thumb_url)"   class="B_blue"  /> </a> </li>
+                                <li> <a href="http://image.yoyound.com/#(x)" rel="zoom-id: zoom;" rev="/#(x)"    >
+                                    <img src="http://image.yoyound.com/#(x)"   class="B_blue"  /> </a> </li>
                                 #end
                                   </ul>
                         </div>
@@ -190,7 +190,7 @@
                 <div id="goods-price">
                     <div class="mar-l">
 
-                        <span class="price">售价</span><strong class="p-price" id="ECS_GOODS_AMOUNT">#(goods.shop_price)</strong>
+                        <span class="price">售价</span><strong class="p-price" id="ECS_GOODS_AMOUNT">#(goods.market_price)</strong>
 
 
                     </div>
@@ -227,7 +227,7 @@
                             <ul class="ys_xuan" id="xuan_125">
                                 <div class="catt" id="catt_125">
 
-                                    <a   href="javascript:" name="1730" id="xuan_a_1730"  title="[ ¥0.00]" >
+                                   <!-- <a   href="javascript:" name="1730" id="xuan_a_1730"  title="[ ¥0.00]" >
                                         <div class="value-label">246019-900050黑色</div>
                                         <input style="display:none" id="spec_value_1730" type="radio" name="spec_125" value="1730" disabled="" />
                                     </a>
@@ -235,7 +235,7 @@
                                     <a   href="javascript:" name="1731" id="xuan_a_1731"  title="[ ¥0.00]" >
                                         <div class="value-label">246019-903050黑红</div>
                                         <input style="display:none" id="spec_value_1731" type="radio" name="spec_125" value="1731" disabled="" />
-                                    </a>
+                                    </a>-->
 
                                 </div>
                             </ul>
@@ -256,7 +256,7 @@
                             <input type="hidden" name="attr_types" id="spec_attr_type_128" value="0">
                             <ul class="ys_xuan" id="xuan_128">
                                 <div class="catt" id="catt_128">
-
+<!--
                                     <a  href="javascript:" name="1732" id="xuan_a_1732"  title="[ ¥0.00]" >
                                         <div class="value-label">S</div>
                                         <input style="display:none" id="spec_value_1732" type="radio" name="spec_128" value="1732" disabled="" />
@@ -285,7 +285,7 @@
                                     <a  href="javascript:" name="1737" id="xuan_a_1737"  title="[ ¥0.00]" >
                                         <div class="value-label">3XL</div>
                                         <input style="display:none" id="spec_value_1737" type="radio" name="spec_128" value="1737" disabled="" />
-                                    </a>
+                                    </a>-->
 
                                 </div>
                             </ul>
@@ -450,7 +450,7 @@
 
                 <div class="mc" id="os_jieshao">
                     <div class="blank20"></div>
-                    <div class="detail-content"> #(goods.goods_desc) </div>
+                    <div class="detail-content"> #(d.goods_desc) </div>
                 </div>
                 <div class="mc" id="os_pinglun">
                     <div class="blank20"></div>

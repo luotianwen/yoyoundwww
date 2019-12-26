@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache updateCheck="false" name="defaultCache">
 
-	<diskStore path="../temp/jeesite/ehcache" />
+	<diskStore path="../temp/www2/ehcache" />
 
 	<!-- 默认缓存配置. 自动失效：最后一次访问时间间隔300秒失效，若没有访问过自创建时间600秒失效。-->
 	<defaultCache maxEntriesLocalHeap="1000" eternal="false" timeToIdleSeconds="1300" timeToLiveSeconds="1600"
@@ -19,4 +19,8 @@
 	<cache name="scrxs" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
 	<cache name="scjps" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
 	<cache name="xps" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="getfoolrcategorys" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="getfooldgoods" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+	<cache name="getfooldrcategorys" maxEntriesLocalHeap="1000" eternal="true" overflowToDisk="true" statistics="true"/>
+
 </ehcache>
